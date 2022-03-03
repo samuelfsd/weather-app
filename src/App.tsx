@@ -1,52 +1,37 @@
-import './App.css';
+import React from 'react';
 
-import React, { useState } from 'react';
-
-import logo from './logo.svg';
+import styles from './styles.module.scss';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p className="header">
-          🚀 Vite + React + Typescript 🤘 & <br />
-          Eslint 🔥+ Prettier
-        </p>
-
-        <div className="body">
-          <button onClick={() => setCount((count) => count + 1)}>
-            🪂 Click me : {count}
-          </button>
-
-          <p> Don&apos;t forgot to install Eslint and Prettier in Your Vscode.</p>
-
-          <p>
-            Mess up the code in <code>App.tsx </code> and save the file.
-          </p>
-          <p>
-            <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React
-            </a>
-            {' | '}
-            <a
-              className="App-link"
-              href="https://vitejs.dev/guide/features.html"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Vite Docs
-            </a>
-          </p>
-        </div>
-      </header>
+    <div className={styles.app}>
+      <div className={styles.container}>
+        <header className={styles.header}>
+          <div className={styles.location}>
+            <p>Dallas</p>
+          </div>
+          <div className={styles.temp}>
+            <h1>65°F</h1>
+          </div>
+          <div className={styles.description}>
+            <p>Clouds</p>
+          </div>
+        </header>
+        <section className={styles.content}>
+          <div className={styles.feels}>
+            <p className={styles.bold}>65°F</p>
+            <p>Feels Like</p>
+          </div>
+          <div className={styles.humidity}>
+            <p className={styles.bold}>20%</p>
+            <p>Humidity</p>
+          </div>
+          <div className={styles.wind}>
+            <p className={styles.bold}>12 MPH</p>
+            <p>Wind Speed</p>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }
